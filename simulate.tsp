@@ -1,0 +1,20 @@
+NAME: st70
+TYPE: TSP
+COMMENT: 70-city problem (Smith/Thompson)
+DIMENSION: 70
+EDGE_WEIGHT_TYPE : EUC_2D
+NODE_COORD_SECTION
+1 0 0
+2 0 1
+3 0 2
+4 0 3
+5 1 3
+6 2 3
+7 3 3
+8 3 2
+9 3 1
+10 3 0
+11 2 0
+12 1 0
+EOF
+
