@@ -26,16 +26,16 @@ def valid_in_single_graph(
     device = th.device(f'cuda:{gpu_id}' if th.cuda.is_available() and gpu_id >= 0 else 'cpu')
 
     # '''dummy value'''
-    _graph_type, _num_nodes, _graph_id = 'tsp', 48, 0
+    _graph_type, _num_nodes, _graph_id = 'tsp', 12, 0
 
 
-    _graph_name = "att48.tsp"
+    # _graph_name = "att48.tsp"
     # _graph_name = 'st70.tsp'
     # _graph_name = "eil101.tsp"
     # _graph_name = "pr152.tsp"
     # _graph_name = "gil262.tsp"
     # _graph_name = "lin318.tsp"
-    # _graph_name = "simulate.tsp"
+    _graph_name = "simulate.tsp"
 
 
     # '''custom'''
@@ -623,13 +623,13 @@ def run_trs(graph_type='ErdosRenyi'):
 
 def maxcut_end2end_mlp():
 
-    graph_name = "att48.tsp"
+    # graph_name = "att48.tsp"
     # graph_name = 'st70.tsp'
     # graph_name = "eil101.tsp"
     # graph_name = "pr152.tsp"
     # graph_name = "gil262.tsp"
     # graph_name = "lin318.tsp"
-    # graph_name = "simulate.tsp"
+    graph_name = "simulate.tsp"
 
     '''input'''
     graph_list: GraphList = load_graph_list(graph_name)
@@ -640,7 +640,7 @@ def maxcut_end2end_mlp():
     # exit(0)
 
     """MLP"""
-    args0 = ConfigPolicy(graph_type="tsp", num_nodes=48*48)
+    args0 = ConfigPolicy(graph_type="tsp", num_nodes=12*12)
     # args0.net_path = f"{model_dir}/policy_net_{graph_type}_Node{num_nodes}.pth"
 
     evaluator = valid_in_single_graph(args0=args0, graph_list=graph_list, if_valid=True)[0]
